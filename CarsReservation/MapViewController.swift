@@ -12,9 +12,11 @@ import GoogleMaps
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var buttonsBackgroundView: UIView!
     
     var locationManager = CLLocationManager()
     var didFindMyLocation = false
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +26,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         mapView.camera = camera
         
         addRandomMarkers()
+        addBlurEffectToTheButtonsView()
     }
-
+    
     func addRandomMarkers() {
-        for _ in 1...10 {
+        for _ in appDelegate.carsArray {
             let randomLatitude = CLLocationDegrees(randomDouble(min: Constants.MoscowMinLatitude, max: Constants.MoscowMaxLatitude))
             let randomLogitude = CLLocationDegrees(randomDouble(min: Constants.MoscowMinLongitude, max: Constants.MoscowMaxLongitude))
             
@@ -39,5 +42,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     
     func randomDouble(min: Double, max: Double) -> Double {
         return (Double(arc4random()) / 0xFFFFFFFF) * (max - min) + min
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        performSegue(withIdentifier: "SegueFromMapToListOfCars", sender: self)
+        return true
+    }
+    
+    func addBlurEffectToTheButtonsView() {
+        if !UIAccessibilityIsReduceTransparencyEnabled() {
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = self.buttonsBackgroundView.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            
+            self.buttonsBackgroundView.addSubview(blurEffectView)
+        }
     }
 }

@@ -13,6 +13,9 @@
 		2D327B571EF17884005A3F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D327B561EF17884005A3F59 /* Assets.xcassets */; };
 		2D327B5A1EF17884005A3F59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D327B581EF17884005A3F59 /* LaunchScreen.storyboard */; };
 		2D327B811EF1AEBC005A3F59 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D327B801EF1AEBC005A3F59 /* Constants.swift */; };
+		2D4B18A91EF2871400BE941F /* CarListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B18A81EF2871400BE941F /* CarListTableViewController.swift */; };
+		2D4B18AB1EF2A65800BE941F /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B18AA1EF2A65800BE941F /* CarTableViewCell.swift */; };
+		2DC5C1471EF2C1D0008430AC /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC5C1461EF2C1D0008430AC /* Car.swift */; };
 		C80445D497B1575E589DE08D /* Pods_CarsReservation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FE08F6922E3211CA7A19F9 /* Pods_CarsReservation.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		2D327B591EF17884005A3F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D327B5B1EF17884005A3F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D327B801EF1AEBC005A3F59 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2D4B18A81EF2871400BE941F /* CarListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarListTableViewController.swift; sourceTree = "<group>"; };
+		2D4B18AA1EF2A65800BE941F /* CarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
+		2DC5C1461EF2C1D0008430AC /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +69,13 @@
 		2D327B4E1EF17883005A3F59 /* CarsReservation */ = {
 			isa = PBXGroup;
 			children = (
+				2DC5C1451EF2C172008430AC /* Model */,
 				2D327B531EF17884005A3F59 /* Main.storyboard */,
-				2D327B511EF17883005A3F59 /* MapViewController.swift */,
-				2D327B801EF1AEBC005A3F59 /* Constants.swift */,
 				2D327B4F1EF17883005A3F59 /* AppDelegate.swift */,
+				2D327B511EF17883005A3F59 /* MapViewController.swift */,
+				2D4B18A81EF2871400BE941F /* CarListTableViewController.swift */,
+				2D4B18AA1EF2A65800BE941F /* CarTableViewCell.swift */,
+				2D327B801EF1AEBC005A3F59 /* Constants.swift */,
 				2D327B5B1EF17884005A3F59 /* Info.plist */,
 				2D327B611EF17892005A3F59 /* SupportingFiles */,
 			);
@@ -81,6 +90,15 @@
 			);
 			name = SupportingFiles;
 			path = ../SupportingFiles;
+			sourceTree = "<group>";
+		};
+		2DC5C1451EF2C172008430AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2DC5C1461EF2C1D0008430AC /* Car.swift */,
+			);
+			name = Model;
+			path = ../Model;
 			sourceTree = "<group>";
 		};
 		B99663AB5C773032EDF78E89 /* Frameworks */ = {
@@ -224,9 +242,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D4B18A91EF2871400BE941F /* CarListTableViewController.swift in Sources */,
 				2D327B521EF17883005A3F59 /* MapViewController.swift in Sources */,
+				2DC5C1471EF2C1D0008430AC /* Car.swift in Sources */,
 				2D327B501EF17883005A3F59 /* AppDelegate.swift in Sources */,
 				2D327B811EF1AEBC005A3F59 /* Constants.swift in Sources */,
+				2D4B18AB1EF2A65800BE941F /* CarTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
