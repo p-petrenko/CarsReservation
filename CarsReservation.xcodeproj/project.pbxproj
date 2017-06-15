@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		2D327B501EF17883005A3F59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D327B4F1EF17883005A3F59 /* AppDelegate.swift */; };
-		2D327B521EF17883005A3F59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D327B511EF17883005A3F59 /* ViewController.swift */; };
+		2D327B521EF17883005A3F59 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D327B511EF17883005A3F59 /* MapViewController.swift */; };
 		2D327B551EF17884005A3F59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D327B531EF17884005A3F59 /* Main.storyboard */; };
 		2D327B571EF17884005A3F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D327B561EF17884005A3F59 /* Assets.xcassets */; };
 		2D327B5A1EF17884005A3F59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D327B581EF17884005A3F59 /* LaunchScreen.storyboard */; };
+		2D327B811EF1AEBC005A3F59 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D327B801EF1AEBC005A3F59 /* Constants.swift */; };
+		C80445D497B1575E589DE08D /* Pods_CarsReservation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10FE08F6922E3211CA7A19F9 /* Pods_CarsReservation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00A2CAB4BB5D467E3879D232 /* Pods-CarsReservation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsReservation.release.xcconfig"; path = "Pods/Target Support Files/Pods-CarsReservation/Pods-CarsReservation.release.xcconfig"; sourceTree = "<group>"; };
+		10FE08F6922E3211CA7A19F9 /* Pods_CarsReservation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarsReservation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		112065C0BC8AA2B54E2367DE /* Pods-CarsReservation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarsReservation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CarsReservation/Pods-CarsReservation.debug.xcconfig"; sourceTree = "<group>"; };
 		2D327B4C1EF17883005A3F59 /* CarsReservation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarsReservation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D327B4F1EF17883005A3F59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2D327B511EF17883005A3F59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2D327B511EF17883005A3F59 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2D327B541EF17884005A3F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D327B561EF17884005A3F59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D327B591EF17884005A3F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D327B5B1EF17884005A3F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D327B801EF1AEBC005A3F59 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C80445D497B1575E589DE08D /* Pods_CarsReservation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				2D327B4E1EF17883005A3F59 /* CarsReservation */,
 				2D327B4D1EF17883005A3F59 /* Products */,
+				DB328E67FF45D4349625F4B5 /* Pods */,
+				B99663AB5C773032EDF78E89 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,9 +63,10 @@
 		2D327B4E1EF17883005A3F59 /* CarsReservation */ = {
 			isa = PBXGroup;
 			children = (
-				2D327B4F1EF17883005A3F59 /* AppDelegate.swift */,
-				2D327B511EF17883005A3F59 /* ViewController.swift */,
 				2D327B531EF17884005A3F59 /* Main.storyboard */,
+				2D327B511EF17883005A3F59 /* MapViewController.swift */,
+				2D327B801EF1AEBC005A3F59 /* Constants.swift */,
+				2D327B4F1EF17883005A3F59 /* AppDelegate.swift */,
 				2D327B5B1EF17884005A3F59 /* Info.plist */,
 				2D327B611EF17892005A3F59 /* SupportingFiles */,
 			);
@@ -73,6 +83,23 @@
 			path = ../SupportingFiles;
 			sourceTree = "<group>";
 		};
+		B99663AB5C773032EDF78E89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10FE08F6922E3211CA7A19F9 /* Pods_CarsReservation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB328E67FF45D4349625F4B5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				112065C0BC8AA2B54E2367DE /* Pods-CarsReservation.debug.xcconfig */,
+				00A2CAB4BB5D467E3879D232 /* Pods-CarsReservation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D327B5E1EF17884005A3F59 /* Build configuration list for PBXNativeTarget "CarsReservation" */;
 			buildPhases = (
+				1585BB9A8AA9084FC9DCDAC9 /* [CP] Check Pods Manifest.lock */,
 				2D327B481EF17883005A3F59 /* Sources */,
 				2D327B491EF17883005A3F59 /* Frameworks */,
 				2D327B4A1EF17883005A3F59 /* Resources */,
+				0268EF54029855705484166D /* [CP] Embed Pods Frameworks */,
+				C3987247B8439D3FE506B44C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,13 +171,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0268EF54029855705484166D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarsReservation/Pods-CarsReservation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1585BB9A8AA9084FC9DCDAC9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C3987247B8439D3FE506B44C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CarsReservation/Pods-CarsReservation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2D327B481EF17883005A3F59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D327B521EF17883005A3F59 /* ViewController.swift in Sources */,
+				2D327B521EF17883005A3F59 /* MapViewController.swift in Sources */,
 				2D327B501EF17883005A3F59 /* AppDelegate.swift in Sources */,
+				2D327B811EF1AEBC005A3F59 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +348,7 @@
 		};
 		2D327B5F1EF17884005A3F59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 112065C0BC8AA2B54E2367DE /* Pods-CarsReservation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J5RT2TQ373;
@@ -282,6 +362,7 @@
 		};
 		2D327B601EF17884005A3F59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00A2CAB4BB5D467E3879D232 /* Pods-CarsReservation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J5RT2TQ373;
@@ -312,6 +393,7 @@
 				2D327B601EF17884005A3F59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
