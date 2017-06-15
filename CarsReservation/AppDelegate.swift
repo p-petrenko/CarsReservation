@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var carsArray: [Car]!
-    var chosenCarPlateNumber: Int!
+    var chosenCarIndex: Int!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -26,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 image: UIImage(named: "LimousineCar\(number)"),
                 brand: "Марка \(number)",
                 model: "Модель \(number)",
-                plateNumber: "Гос. номер \(number)")
+                plateNumber: "Гос. номер \(number)",
+                location: chooseRandomCarLocation())
             carsArray.append(car)
         }
         return true
@@ -54,6 +55,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func chooseRandomCarLocation() -> CarLocation {
+        let randomLatitude = CLLocationDegrees(randomDouble(min: Constants.MoscowMinLatitude, max: Constants.MoscowMaxLatitude))
+        let randomLogitude = CLLocationDegrees(randomDouble(min: Constants.MoscowMinLongitude, max: Constants.MoscowMaxLongitude))
+        return CarLocation(latitude: randomLatitude, longitude: randomLogitude)
+    }
+    
+    func randomDouble(min: Double, max: Double) -> Double {
+        return (Double(arc4random()) / 0xFFFFFFFF) * (max - min) + min
+    }
     
 }
 

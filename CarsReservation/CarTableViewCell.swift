@@ -15,7 +15,7 @@ class CarTableViewCell: UITableViewCell {
     @IBOutlet weak var carModel: UILabel!
     @IBOutlet weak var plateNumber: UILabel!
     @IBOutlet weak var reserveButton: UIButton!
-
+    
     var car: Car! {
         didSet {
             updateCellData()
@@ -27,7 +27,5 @@ class CarTableViewCell: UITableViewCell {
         carBrand.text = car.carBrand
         carModel.text = car.carModel
         plateNumber.text = car.carPlateNumber
-    }
-    
-    
+    }  
 }

@@ -13,10 +13,10 @@ class CarListTableViewController: UITableViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBAction func reserveCar(_ sender: UIButton) {
-        if appDelegate.chosenCarPlateNumber != nil {
-            appDelegate.chosenCarPlateNumber = nil
+        if appDelegate.chosenCarIndex != nil {
+            appDelegate.chosenCarIndex = nil
         } else {
-            appDelegate.chosenCarPlateNumber = sender.tag
+            appDelegate.chosenCarIndex = sender.tag
         }
         tableView.reloadData()
     }
@@ -28,7 +28,7 @@ class CarListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if appDelegate.chosenCarPlateNumber != nil {
+        if appDelegate.chosenCarIndex != nil {
             return 1
         } else {
             return appDelegate.carsArray.count
@@ -41,11 +41,11 @@ class CarListTableViewController: UITableViewController {
             return CarTableViewCell()
         }
 
-        if let carNumber = appDelegate.chosenCarPlateNumber {
-            cell.reserveButton.titleLabel!.text = "Завершить"
+        if let carNumber = appDelegate.chosenCarIndex {
+            cell.reserveButton.setTitle("Завершить", for: .normal)
             cell.car = carsArray[carNumber]
         } else {
-            cell.reserveButton.titleLabel!.text = "Забронировать"
+            cell.reserveButton.setTitle("Забронировать", for: .normal)
             cell.reserveButton.tag = indexPath.row
             cell.car = carsArray[indexPath.row]
         }

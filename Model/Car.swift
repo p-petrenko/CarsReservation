@@ -13,13 +13,15 @@ class Car {
     var carBrand: String
     var carModel: String
     var carPlateNumber: String
+    var carLocation: CarLocation
     
-    init(image: UIImage?, brand: String, model: String, plateNumber: String) {
+    init(image: UIImage?, brand: String, model: String, plateNumber: String, location: CarLocation) {
         if let carImage = image {
             self.carImage = carImage
         }
         carBrand = brand
         carModel = model
         carPlateNumber = plateNumber
+        carLocation = location
     }
 }

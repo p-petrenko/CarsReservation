@@ -97,7 +97,7 @@
                             <constraint firstItem="1XB-NP-16g" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tFq-bA-2uz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MAP" id="5d4-Ap-nU0"/>
+                    <navigationItem key="navigationItem" title="Карта" id="5d4-Ap-nU0"/>
                     <connections>
                         <outlet property="buttonsBackgroundView" destination="4rF-Rf-9PX" id="52J-DE-wWK"/>
                         <outlet property="mapView" destination="1XB-NP-16g" id="ukx-Xa-MTy"/>
@@ -108,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="2842.4000000000001" y="36.431784107946029"/>
         </scene>
-        <!--CARS-->
+        <!--Автомобили-->
         <scene sceneID="IWb-Vf-C5T">
             <objects>
                 <tableViewController id="jcw-v8-86d" customClass="CarListTableViewController" customModule="CarsReservation" customModuleProvider="target" sceneMemberID="viewController">
@@ -190,7 +190,7 @@
                             <outlet property="delegate" destination="jcw-v8-86d" id="voe-W7-t53"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="CARS" id="drC-lo-LSf"/>
+                    <navigationItem key="navigationItem" title="Автомобили" id="drC-lo-LSf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rl3-wq-KIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

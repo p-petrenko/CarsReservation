@@ -21,27 +21,33 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
+        addBlurEffectToTheButtonsView()
         
         let camera = GMSCameraPosition.camera(withLatitude: Constants.MoscowCenterLatitude, longitude: Constants.MoscowCenterLongitude, zoom: 10.0)
         mapView.camera = camera
-        
-        addRandomMarkers()
-        addBlurEffectToTheButtonsView()
     }
     
-    func addRandomMarkers() {
-        for _ in appDelegate.carsArray {
-            let randomLatitude = CLLocationDegrees(randomDouble(min: Constants.MoscowMinLatitude, max: Constants.MoscowMaxLatitude))
-            let randomLogitude = CLLocationDegrees(randomDouble(min: Constants.MoscowMinLongitude, max: Constants.MoscowMaxLongitude))
-            
-            let position = CLLocationCoordinate2D(latitude: randomLatitude, longitude: randomLogitude)
-            let marker = GMSMarker(position: position)
-            marker.map = mapView
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        mapView.clear()
+        
+        if let carIndex = appDelegate.chosenCarIndex {
+            // the car was chosen -> show only this car on the map
+            let carLocation = appDelegate.carsArray[carIndex].carLocation
+            addMarker(location: carLocation)
+        } else {
+            for car in appDelegate.carsArray {
+                let carLocation = car.carLocation
+                addMarker(location: carLocation)
+            }
         }
     }
     
-    func randomDouble(min: Double, max: Double) -> Double {
-        return (Double(arc4random()) / 0xFFFFFFFF) * (max - min) + min
+    func addMarker(location: CarLocation) {
+        let position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        let marker = GMSMarker(position: position)
+        marker.map = mapView
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
