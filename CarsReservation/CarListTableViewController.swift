@@ -51,5 +51,4 @@ class CarListTableViewController: UITableViewController {
         }
         return cell
     }
-    
 }
