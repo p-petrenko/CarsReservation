@@ -17,6 +17,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
     var locationManager = CLLocationManager()
     var didFindMyLocation = false
     var locationButtonWasTapped = false
+    var userLocation: CLLocation!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -25,7 +26,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         locationManager.delegate = self
         // notify the locationManager every 100 meters
         locationManager.distanceFilter = 100.0;
-        let camera = GMSCameraPosition.camera(withLatitude: Constants.MoscowCenterLatitude, longitude: Constants.MoscowCenterLongitude, zoom: 10.0)
+        let camera = GMSCameraPosition.camera(withLatitude: Constants.KaliningradCenterLatitude, longitude: Constants.KaliningradCenterLongitude, zoom: 10.0)
         mapView.camera = camera
     }
     
@@ -35,6 +36,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         addBlurEffectToTheButtonsView()
         mapView.clear()
         locationManager.stopUpdatingLocation()
+        if locationButtonWasTapped {
+            // show blue marker on the last user's location
+            addUserLocationMarker(location: userLocation)
+        }
         if let carIndex = appDelegate.chosenCarIndex {
             // the car was chosen -> show only this car on the map
             let carLocation = appDelegate.carsArray[carIndex].carLocation
@@ -44,9 +49,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
                 let carLocation = car.carLocation
                 addMarker(location: carLocation)
             }
-        }
-        if locationButtonWasTapped {
-            getUserLocation()
         }
     }
     
@@ -82,6 +84,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             let myLocation: CLLocation = locations.last!
             mapView.camera = GMSCameraPosition.camera(withTarget: myLocation.coordinate, zoom: 10.0)
             addUserLocationMarker(location: myLocation)
+            userLocation = myLocation
             didFindMyLocation = true
         }
     }

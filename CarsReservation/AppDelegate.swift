@@ -56,8 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func chooseRandomCarLocation() -> CarLocation {
-        let randomLatitude = CLLocationDegrees(randomDouble(min: Constants.MoscowMinLatitude, max: Constants.MoscowMaxLatitude))
-        let randomLogitude = CLLocationDegrees(randomDouble(min: Constants.MoscowMinLongitude, max: Constants.MoscowMaxLongitude))
+        let randomLatitude = CLLocationDegrees(randomDouble(min: Constants.KaliningradMinLatitude, max: Constants.KaliningradMaxLatitude))
+        let randomLogitude = CLLocationDegrees(randomDouble(min: Constants.KaliningradMinLongitude, max: Constants.KaliningradMaxLongitude))
         return CarLocation(latitude: randomLatitude, longitude: randomLogitude)
     }
     
